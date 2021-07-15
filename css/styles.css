@@ -10284,9 +10284,9 @@ form .row:first-child .floating-label-form-group {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80vw;
+  width: 100vw;
   height: 100px;
-  max-width: 1000px;
+  max-width: 800px;
   position: relative;
   z-index: 0;
 }
