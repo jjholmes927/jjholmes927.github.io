@@ -10286,7 +10286,7 @@ form .row:first-child .floating-label-form-group {
   align-items: center;
   width: 100vw;
   height: 100px;
-  max-width: 800px;
+  max-width: 600px;
   position: relative;
   z-index: 0;
 }
@@ -10378,11 +10378,11 @@ form .row:first-child .floating-label-form-group {
   margin-top: 100px;
   max-width: 1000px;
 }
-.description-flex-container p {
+.description-flex-container div {
   margin-top: 0;
   display: none;
 }
-.description-flex-container p.active {
+.description-flex-container div.active {
   display: block;
 }
 

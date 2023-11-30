@@ -1,6 +1,6 @@
 $(function(){
 	var inputs = $('.input');
-	var paras = $('.description-flex-container').find('p');
+	var paras = $('.description-flex-container').find('div');
 	inputs.click(function(){
 		var t = $(this),
 				ind = t.index(),
