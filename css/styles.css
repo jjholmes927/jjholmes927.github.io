@@ -10291,6 +10291,19 @@ form .row:first-child .floating-label-form-group {
   z-index: 0;
 }
 
+/* Continuous timeline line behind the dots for consistent linking */
+.input-flex-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: #2C3E50;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
 .input {
   width: 25px;
   height: 25px;
@@ -10303,23 +10316,9 @@ form .row:first-child .floating-label-form-group {
   font-size: 15px;
   font-weight: 700;
 }
+/* Disable per-dot connector segments; use container line instead */
 .input::before, .input::after {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #2C3E50;
-  width: 8.4vw;
-  height: 5px;
-  max-width: 400px;
-}
-.input::before {
-  left: calc(-8.4vw + 16.5px);
-}
-.input::after {
-  right: calc(-8.4vw + 16.5px);
+  content: none;
 }
 .input.active {
   background-color: #2C3E50;
@@ -10386,14 +10385,8 @@ form .row:first-child .floating-label-form-group {
   display: block;
 }
 
+/* No special positioning needed when using container line */
 @media (min-width: 1250px) {
-  .input::before {
-    left: -37.5px;
-  }
-
-  .input::after {
-    right: -37.5px;
-  }
 }
 @media (max-width: 850px) {
   .input {
@@ -10404,10 +10397,10 @@ form .row:first-child .floating-label-form-group {
     height: 3px;
   }
   .input::before {
-    left: calc(-4vw + 18.5px);
+    left: auto;
   }
   .input::after {
-    right: calc(-4vw + 18.5px);
+    right: auto;
   }
 }
 @media (max-width: 600px) {
@@ -10430,6 +10423,9 @@ form .row:first-child .floating-label-form-group {
     background-color: #AEB6BF;
   }
   .input::before, .input::after {
+    content: none;
+  }
+  .input-flex-container::before {
     content: none;
   }
   .input span {
